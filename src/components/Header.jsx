@@ -43,10 +43,11 @@ const Header = () => {
     };
 
     return (
-        <header className="flex items-center justify-between w-full container mx-auto p-4 md:p-8 fixed top-0 left-0 z-50">
+        <header className="flex items-center justify-between w-full container mx-auto p-4 md:p-8 fixed top-0 left z-50">
             <h2 className="text-2xl md:text-3xl italic font-serif font-normal text-neutral-700">
                 Kamohelo.
             </h2>
+
             <nav>
                 <ul className="flex items-center gap-6">
                     {NavMenus.map((menu) => {
