@@ -3,7 +3,7 @@ import Home from "@/containers/Home";
 
 const App = () => {
     return (
-        <div className="w-screen min-h-screen flex-1">
+        <div className="w-screen min-h-screen overflow-x-hidden flex-1">
             {/* header*/}
             <Header />
 

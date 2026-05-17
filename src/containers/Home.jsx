@@ -2,10 +2,12 @@ import { HeroBg } from "@/assets";
 
 const Home = () => {
     return (
-        <div className="w-full h-screen bg-gray-100 pt-24 relative outer-gradient">
+        <div className="w-full h-screen pt-24 relative outer-gradient">
             <div className="radial-bg"></div>
             <div className="bottom-left-gradient"></div>
             <div className="bottom-right-gradient"></div>
+
+            {/* Hero image */}
             <div className="absolute inset-0 z-10 flex justify-center items-end pointer-events-none">
                 <img
                     alt="Kamohelo"
@@ -14,10 +16,39 @@ const Home = () => {
                 />
             </div>
 
-            <div className="relative flex flex-col items-center text-center pt-12 pointer-events-none">
-                <h2 className="text-neutral-700 font-bold font-serif italic text-6xl md:text-7xl lg:text-9xl tracking-widest">
+            <div className="relative flex flex-col items-center justify-between text-center pointer-events-none h-full container mx-auto">
+                <h2 className="text-neutral-700 font-normal font-serif italic text-6xl md:text-7xl lg:text-9xl tracking-widest ">
                     Hey, there
                 </h2>
+
+                <div className="w-full hidden md:flex items-center justify-between px-12">
+                    {/* Available for new opportunities  */}
+                    <div className="p-2 px-3 rounded-full bg-white shadow-sm flex items-center gap-2">
+                        <div className="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center animate-pulse">
+                            <div className="w-3 h-3 bg-red-400 rounded-full"></div>
+                        </div>
+
+                        <span className="text-xs text-neutral-700">
+                            Available for new opportunities
+                        </span>
+                    </div>
+
+                    {/* Specialized */}
+                    <p className="w-44 text-left text-xs tracking-wider text-neutral-700">
+                        Specialized in React, Next.js, Node, Postgres,
+                        TypeScript, Python, and AI Digital Transformation
+                        Solutions
+                    </p>
+                </div>
+
+                <div className="w-full flex items-center justify-between px-4 md:px-12 z-30">
+                    <h1 className="text-4xl md:text-6xl lg:text-8xl text-left font-bold font-sans text-neutral-800 tracking-widest uppercase">
+                        I am <br /> Kamohelo
+                    </h1>
+                    <h2 className="text-xl md:text-4xl text-left font-bold text-neutral-800 tracking-wider uppercase">
+                        Full <br /> Stack <br /> Software <br /> Engineer
+                    </h2>
+                </div>
             </div>
         </div>
     );
