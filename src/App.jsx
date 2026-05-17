@@ -1,9 +1,26 @@
-import { Button } from "@/components/ui/button.jsx";
+import Header from "@/components/Header";
+import Home from "@/containers/Home";
 
 const App = () => {
     return (
-        <div className="text-blue-600 font-bold text-4xl">
-            <Button size="icon">Click Me</Button>
+        <div className="w-screen min-h-screen flex-1">
+            {/* header*/}
+            <Header />
+
+            {/* home */}
+            <Home />
+
+            {/* work */}
+
+            {/* about */}
+
+            {/* services */}
+
+            {/* testimonials */}
+
+            {/* contact */}
+
+            {/* footer */}
         </div>
     );
 };
