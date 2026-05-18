@@ -1,3 +1,4 @@
+export { default as AboutImg } from "@/assets/Adobe Express - file 3.png";
 export { default as HeroBg } from "@/assets/Adobe Express - file.png";
 
 // Projects

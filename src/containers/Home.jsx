@@ -2,13 +2,13 @@ import { HeroBg } from "@/assets";
 
 const Home = () => {
     return (
-        <div className="w-full h-screen pt-24 relative outer-gradient">
+        <div className="w-full h-screen pt-24 relative outer-gradient overflow-hidden">
             <div className="radial-bg"></div>
             <div className="bottom-left-gradient"></div>
             <div className="bottom-right-gradient"></div>
 
             {/* Hero image */}
-            <div className="absolute inset-0 z-10 flex justify-center items-end pointer-events-none">
+            <div className="absolute inset-0 z-10 flex justify-center items-end pointer-events-none overflow-hidden">
                 <img
                     alt="Kamohelo"
                     src={HeroBg}

@@ -1,10 +1,11 @@
 import Header from "@/components/Header";
 import Home from "@/containers/Home";
 import Work from "@/containers/Work";
+import About from "./containers/About";
 
 const App = () => {
     return (
-        <div className="w-screen min-h-screen overflow-x-hidden flex-1">
+        <div className="w-full min-h-screen overflow-x-hidden flex-1">
             {/* header*/}
             <Header />
 
@@ -15,7 +16,7 @@ const App = () => {
             <Work />
 
             {/* about */}
-
+            <About />
             {/* services */}
 
             {/* testimonials */}
