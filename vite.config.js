@@ -6,6 +6,7 @@ import path from "node:path";
 import { defineConfig } from "vite";
 
 export default defineConfig({
+    base: "/personal-website/",
     plugins: [
         react(),
         babel({ presets: [reactCompilerPreset()] }),
