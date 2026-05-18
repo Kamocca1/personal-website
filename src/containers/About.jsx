@@ -34,7 +34,7 @@ const About = () => {
     return (
         <section
             id="about"
-            className="w-full h-auto md:h-screen pt-24 container mx-auto px-6 relative  flex flex-col items-center justify-around"
+            className="w-full h-auto md:h-screen pt-24 container mx-auto px-6 relative flex flex-col items-center justify-around"
         >
             <div className="space-y-6">
                 <h2 className="text-xl md:text-2xl text-center font-bold text-neutral-800 uppercase">
@@ -57,8 +57,8 @@ const About = () => {
 
             <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8 pt-22">
                 {/* left */}
-                <div className="w-full space-y-6 -rotate-3 hover:rotate-0 transition-all duration-150 ease-in-out">
-                    <div className="aspect-square rounded-lg shadow hover:shadow-lg bg-black  flex items-center justify-end">
+                <div className="w-full space-y-6 ">
+                    <div className="aspect-square rounded-lg shadow hover:shadow-lg bg-black  flex items-center justify-en -rotate-3 hover:rotate-0 transition-all duration-150 ease-in-out overflow-hidden">
                         <img
                             src={AboutImg}
                             className="w-full h-full object-contain"
