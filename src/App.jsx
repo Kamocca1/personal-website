@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Home from "@/containers/Home";
+import Work from "@/containers/Work";
 
 const App = () => {
     return (
@@ -11,6 +12,7 @@ const App = () => {
             <Home />
 
             {/* work */}
+            <Work />
 
             {/* about */}
 
