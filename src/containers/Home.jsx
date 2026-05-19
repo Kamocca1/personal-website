@@ -20,7 +20,7 @@ const Home = () => {
             </div>
 
             <div className="relative flex flex-col items-center justify-between text-center pointer-events-none h-full container mx-auto">
-                <h2 className="text-neutral-700 font-normal font-serif italic text-6xl md:text-7xl lg:text-9xl tracking-widest ">
+                <h2 className="text-slate-700 font-normal font-serif italic text-6xl md:text-7xl lg:text-9xl tracking-widest ">
                     Hey, there
                 </h2>
 
@@ -45,10 +45,10 @@ const Home = () => {
                 </div>
 
                 <div className="w-full flex items-center justify-between px-4 md:px-12 z-30">
-                    <h1 className="text-4xl md:text-6xl lg:text-8xl text-left font-bold font-sans tracking-widest uppercase text-neutral-800 [text-shadow:_0_1px_0_rgb(255_255_255_/_40%)]">
+                    <h1 className="text-4xl md:text-6xl lg:text-8xl text-left font-bold font-sans tracking-widest uppercase text-slate-800 [text-shadow:_0_1px_0_rgb(255_255_255_/_30%)] drop-shadow-[0_2px_10px_rgba(255,255,255,0.8)]">
                         I am <br /> Kamohelo
                     </h1>
-                    <h2 className="text-xl md:text-4xl text-left font-bold tracking-wider uppercase text-neutral-800 [text-shadow:_0_1px_0_rgb(255_255_255_/_40%)]">
+                    <h2 className="text-xl md:text-4xl text-left font-bold tracking-wider uppercase text-slate-800 [text-shadow:_0_1px_0_rgb(255_255_255_/_30%)] drop-shadow-[0_2px_10px_rgba(255,255,255,0.8)] ">
                         Full <br /> Stack <br /> Software <br /> Engineer
                     </h2>
                 </div>
