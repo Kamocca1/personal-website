@@ -1,7 +1,8 @@
 import Header from "@/components/Header";
+import About from "@/containers/About";
 import Home from "@/containers/Home";
 import Projects from "@/containers/Projects";
-import About from "./containers/About";
+import Services from "@/containers/Services";
 
 const App = () => {
     return (
@@ -18,6 +19,7 @@ const App = () => {
             {/* about */}
             <About />
             {/* services */}
+            <Services />
 
             {/* testimonials */}
 
