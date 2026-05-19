@@ -5,7 +5,7 @@ import About from "./containers/About";
 
 const App = () => {
     return (
-        <div className="w-full min-h-screen overflow-x-hidden flex-1">
+        <div className="w-full min-h-screen overflow-hidden flex-1">
             {/* header*/}
             <Header />
 
