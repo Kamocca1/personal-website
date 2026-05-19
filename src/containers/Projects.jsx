@@ -5,14 +5,14 @@ const Projects = () => {
     return (
         <section
             id="projects"
-            className="w-full h-auto pt-24 container mx-auto px-6 relative space-y-12"
+            className="w-full h-auto md:min-h-screen pt-24 container mx-auto px-6 relative space-y-12"
         >
             <h2 className="text-xl md:text-2xl text-center font-bold text-neutral-800 uppercase">
                 Recent Projects
             </h2>
 
             <div className="max-w-5xl mx-auto w-full px-4 sm:px-6 lg:px-8">
-                <div className="w-full grid grid-cols-1 md:grid-cols-1 sm:gap-4 md:gap-8 lg:gap-12">
+                <div className="w-full grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 sm:gap-4 md:gap-8 lg:gap-12">
                     {ProjectData.map((project) => (
                         <ProjectCard key={project.id} project={project} />
                     ))}

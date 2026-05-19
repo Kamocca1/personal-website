@@ -34,7 +34,7 @@ const About = () => {
     return (
         <section
             id="about"
-            className="w-full h-auto pt-24 container mx-auto px-6 relative flex flex-col items-center justify-around"
+            className="w-full h-auto md:min-h-screen pt-24 container mx-auto px-6 relative flex flex-col items-center justify-around"
         >
             <div className="space-y-6">
                 <h2 className="text-xl md:text-2xl text-center font-bold text-neutral-800 uppercase">
