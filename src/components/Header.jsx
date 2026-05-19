@@ -5,36 +5,71 @@ import { useEffect, useState } from "react";
 
 const Header = () => {
     const [activeSection, setActiveSection] = useState("home");
+    const [isScrolled, setIsScrolled] = useState(false);
 
     useEffect(() => {
-        const syncFromUrl = () => {
+        // --- HANDLE HEADER BACKGROUND ON SCROLL ---
+        const handleScroll = () => {
+            // Trigger the background change after 20px of scrolling
+            setIsScrolled(window.scrollY > 20);
+        };
+        handleScroll();
+        window.addEventListener("scroll", handleScroll);
+
+        // --- SYNC NAV WITH URL ON LOAD & BACK/FORWARD BUTTONS ---
+        const setActiveSectionFromUrl = () => {
             const params = new URLSearchParams(window.location.search);
             const section = params.get("section");
-            setActiveSection(section || "home");
+            if (section) setActiveSection(section);
         };
-        syncFromUrl();
+        setActiveSectionFromUrl();
+        window.addEventListener("popstate", setActiveSectionFromUrl);
 
-        window.addEventListener("popstate", syncFromUrl);
+        // --- SCROLLSPY: OBSERVE SECTIONS ON THE SCREEN ---
+        // Create an observer that triggers when a section crosses the middle of the screen
+        const observerOptions = {
+            root: null,
+            rootMargin: "-40% 0px -40% 0px", // Creates a "trigger band" in the center of the viewport
+            threshold: 0,
+        };
 
-        return () => window.removeEventListener("popstate", syncFromUrl);
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const currentId = entry.target.id;
+                    setActiveSection(currentId);
+
+                    // Update the URL quietly without cluttering the user's browser history so I'm not creating 50 new history entries while they scroll, which would ruin the user's ability to use the browser's "Back" button
+                    const url = new URL(window.location);
+                    url.searchParams.set("section", currentId);
+                    window.history.replaceState({}, "", url);
+                }
+            });
+        }, observerOptions);
+
+        // Tell the observer to watch every section ID listed in the NavMenu
+        const sectionIds = NavMenus.map((menu) => menu.key);
+        sectionIds.forEach((id) => {
+            const element = document.getElementById(id);
+            if (element) observer.observe(element);
+        });
+
+        // --- CLEANUP ---
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+            window.removeEventListener("popstate", setActiveSectionFromUrl);
+            sectionIds.forEach((id) => {
+                const element = document.getElementById(id);
+                if (element) observer.unobserve(element);
+            });
+        };
     }, []);
 
     const handleNavClick = (menu) => {
         const url = new URL(window.location);
 
-        if (menu.key === "home") {
-            url.search = "";
-            window.history.pushState({}, "", url);
-
-            window.scrollTo({ top: 0, behavior: "smooth" });
-            setActiveSection("home");
-            return;
-        }
-
         url.searchParams.set("section", menu.key);
-
         window.history.pushState({}, "", url);
-
         document
             .getElementById(menu.key)
             ?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -44,12 +79,19 @@ const Header = () => {
 
     return (
         <header
-            className={`
-    flex items-center justify-between w-full  p-4 md:p-8 fixed top-0 left-0 z-50
-    `}
+            className={cn(
+                "w-full fixed top-0 left-0 z-50 flex items-center justify-between transition-all duration-300",
+                // Adjust padding when scrolled to make the bar feel more compact
+                isScrolled ? "p-2 md:p-4" : "p-4 md:p-8",
+            )}
         >
             <div
-                className={`flex items-center justify-between container mx-auto transition-all duration-300 ease-in-out $`}
+                className={cn(
+                    "flex items-center justify-between container mx-auto transition-all duration-500 ease-in-out px-6 py-3",
+                    // 2. Apply background, rounding, and border only when scrolled
+                    isScrolled &&
+                        "bg-white/90 backdrop-blur-md shadow-md rounded-4xl border-x border-b border-neutral-100",
+                )}
             >
                 <h2 className="text-2xl md:text-3xl italic font-serif font-normal text-neutral-700">
                     Kamohelo.

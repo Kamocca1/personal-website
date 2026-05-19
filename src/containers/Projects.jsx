@@ -1,10 +1,10 @@
 import { Badge } from "@/components/ui/badge";
 import { ProjectData } from "@/utils/helper";
 
-const Work = () => {
+const Projects = () => {
     return (
         <section
-            id="work"
+            id="projects"
             className="w-full h-auto pt-24 container mx-auto px-6 relative space-y-12"
         >
             <h2 className="text-xl md:text-2xl text-center font-bold text-neutral-800 uppercase">
@@ -50,4 +50,4 @@ const ProjectCard = ({ project }) => {
     );
 };
 
-export default Work;
+export default Projects;

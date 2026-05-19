@@ -3,13 +3,13 @@ import { BlogApp, InventoryApp, PokemonApp } from "@/assets";
 export const NavMenus = [
     {
         label: "Home",
-        url: "/",
+        url: "/?section=home",
         key: "home",
     },
     {
-        label: "Work",
-        url: "/?section=work",
-        key: "work",
+        label: "Projects",
+        url: "/?section=projects",
+        key: "projects",
     },
     {
         label: "About",

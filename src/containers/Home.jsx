@@ -2,7 +2,10 @@ import { HeroBg } from "@/assets";
 
 const Home = () => {
     return (
-        <div className="w-full h-screen pt-24 relative outer-gradient overflow-hidden">
+        <section
+            id="home"
+            className="w-full h-screen pt-24 relative outer-gradient overflow-hidden"
+        >
             <div className="radial-bg"></div>
             <div className="bottom-left-gradient"></div>
             <div className="bottom-right-gradient"></div>
@@ -42,15 +45,15 @@ const Home = () => {
                 </div>
 
                 <div className="w-full flex items-center justify-between px-4 md:px-12 z-30">
-                    <h1 className="text-4xl md:text-6xl lg:text-8xl text-left font-bold font-sans text-neutral-800 tracking-widest uppercase">
+                    <h1 className="text-4xl md:text-6xl lg:text-8xl text-left font-bold font-sans tracking-widest uppercase text-neutral-800 [text-shadow:_0_1px_0_rgb(255_255_255_/_40%)]">
                         I am <br /> Kamohelo
                     </h1>
-                    <h2 className="text-xl md:text-4xl text-left font-bold text-neutral-800 tracking-wider uppercase">
+                    <h2 className="text-xl md:text-4xl text-left font-bold tracking-wider uppercase text-neutral-800 [text-shadow:_0_1px_0_rgb(255_255_255_/_40%)]">
                         Full <br /> Stack <br /> Software <br /> Engineer
                     </h2>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 

@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Home from "@/containers/Home";
-import Work from "@/containers/Work";
+import Projects from "@/containers/Projects";
 import About from "./containers/About";
 
 const App = () => {
@@ -12,8 +12,8 @@ const App = () => {
             {/* home */}
             <Home />
 
-            {/* work */}
-            <Work />
+            {/* projects */}
+            <Projects />
 
             {/* about */}
             <About />
