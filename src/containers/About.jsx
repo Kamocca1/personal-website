@@ -55,10 +55,10 @@ const About = () => {
                 </p>
             </div>
 
-            <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8 pt-22">
+            <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-8 pt-22">
                 {/* left */}
                 <div className="w-full space-y-6 ">
-                    <div className="aspect-square rounded-lg shadow hover:shadow-lg bg-black  flex items-center justify-en -rotate-3 hover:rotate-0 transition-all duration-150 ease-in-out overflow-hidden">
+                    <div className="aspect-square rounded-lg shadow hover:shadow-lg bg-black  flex items-center justify-end md:-rotate-3 md:hover:rotate-0 transition-all duration-150 ease-in-out overflow-hidden">
                         <img
                             src={AboutImg}
                             className="w-full h-full object-contain"
@@ -88,8 +88,8 @@ const About = () => {
                         </a>
                     </div>
                 </div>
-                {/* right */}
 
+                {/* right */}
                 <div className="w-full flex flex-col items-start justify-around">
                     <p className="text-base tracking-wider text-neutral-500">
                         I’m a Full Stack Software Engineer and SaaS Product
@@ -121,14 +121,14 @@ const About = () => {
 
 const ExpCard = ({ data }) => {
     return (
-        <div className="grid grid-cols-3 gap-6 p-3 border-b border-gray-200">
-            <h2 className="text-left text-sm font-normal text-neutral-700">
+        <div className="flex flex-col gap-1 lg:grid lg:grid-cols-3 lg:gap-6 p-3 border-b border-gray-200 text-sm font-normal text-neutral-700">
+            <h2 className="text-left font-medium lg:font-normal text-neutral-900 lg:text-neutral-700">
                 {data.role}
             </h2>
-            <h2 className="text-left text-sm font-normal text-neutral-700">
+            <h2 className="text-left text-xs lg:text-sm text-neutral-500 lg:text-neutral-700">
                 {data.company}
             </h2>
-            <p className="text-right text-sm font-normal text-neutral-700">
+            <p className="text-left lg:text-right text-xs lg:text-sm text-neutral-400 lg:text-neutral-700">
                 {data.years}
             </p>
         </div>

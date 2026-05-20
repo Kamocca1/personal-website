@@ -5,16 +5,17 @@ const Services = () => {
     return (
         <section
             id="services"
-            className="w-full h-auto md:min-h-screen pt-24 container mx-auto px-6 relative space-y-12 flex flex-col items-center justify-center"
+            className="w-full h-auto lg:min-h-screen pt-24 container mx-auto px-6 relative space-y-12 flex flex-col items-center justify-center"
         >
             <h2 className="text-xl md:text-3xl text-center font-serif italic text-neutral-800">
                 The focus is on
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
-                <div className="w-full flex flex-col items-center justify-center gap-6 col-span-1">
+            <div className="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-5 gap-y-6 gap-x-6 lg:gap-6">
+                {/* Left Side Pills */}
+                <div className="w-full flex flex-row lg:flex-col flex-wrap items-center justify-center gap-3 lg:gap-6 col-span-1 order-2 lg:order-1">
                     {/* first one */}
-                    <div className="flex items-center justify-start gap-2 rounded-full bg-neutral-100 px-2.5 py-1.5 rotate-6">
+                    <div className="flex items-center justify-start gap-2 rounded-full bg-neutral-100 px-2.5 py-1.5 rotate-0 lg:rotate-6">
                         <div className="w-6 h-6 rounded-full flex items-center justify-center bg-orange-500">
                             <Zap size={18} className="fill-white text-white" />
                         </div>
@@ -28,7 +29,7 @@ const Services = () => {
                         <p className="text-xs">Express.js</p>
                     </div>
                     {/* third one */}
-                    <div className="flex items-center justify-start gap-2 rounded-full bg-neutral-100 px-2.5 py-1.5 -rotate-6">
+                    <div className="flex items-center justify-start gap-2 rounded-full bg-neutral-100 px-2.5 py-1.5 rotate-0 lg:-rotate-6">
                         <div className="w-6 h-6 rounded-full flex items-center justify-center bg-black">
                             <Zap size={18} className="fill-white text-white" />
                         </div>
@@ -36,8 +37,9 @@ const Services = () => {
                     </div>
                 </div>
 
-                <div className="flex items-center justify-center w-full col-span-3">
-                    <p className="text-center text-neutral-500 font-normal font-serif tracking-widest text-2xl md:text-4xl w-full ">
+                {/* Headline Text */}
+                <div className="flex items-center justify-center w-full col-span-1 lg:col-span-3 px-4 order-1 lg:order-2">
+                    <p className="text-center text-neutral-500 font-normal font-serif tracking-widest text-2xl md:text-3xl lg:text-4xl w-full">
                         blending full-stack engineering with commercial strategy
                         to{" "}
                         <span className="text-neutral-800 font-semibold">
@@ -46,9 +48,10 @@ const Services = () => {
                     </p>
                 </div>
 
-                <div className="w-full flex flex-col items-center justify-center gap-6 col-span-1">
+                {/* Right Side Pills */}
+                <div className="w-full flex flex-row lg:flex-col flex-wrap items-center justify-center gap-3 lg:gap-6 col-span-1 order-3">
                     {/* first one */}
-                    <div className="flex items-center justify-start gap-2 rounded-full bg-neutral-100 px-2.5 py-1.5 -rotate-6">
+                    <div className="flex items-center justify-start gap-2 rounded-full bg-neutral-100 px-2.5 py-1.5 rotate-0 lg:-rotate-6">
                         <div className="w-6 h-6 rounded-full flex items-center justify-center bg-yellow-500">
                             <Zap size={18} className="fill-white text-white" />
                         </div>
@@ -62,7 +65,7 @@ const Services = () => {
                         <p className="text-xs">Git</p>
                     </div>
                     {/* third one */}
-                    <div className="flex items-center justify-start gap-2 rounded-full bg-neutral-100 px-2.5 py-1.5 rotate-6 ">
+                    <div className="flex items-center justify-start gap-2 rounded-full bg-neutral-100 px-2.5 py-1.5 rotate-0 lg:rotate-6">
                         <div className="w-6 h-6 rounded-full flex items-center justify-center bg-emerald-500">
                             <Zap size={18} className="fill-white text-white" />
                         </div>
@@ -75,13 +78,12 @@ const Services = () => {
                 here&apos;s how it works
             </h2>
 
-            <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-8 px-4 py-4 md:px-12 overflow-x-hidden">
+            <div className="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 py-12 md:px-12">
                 {/* first card */}
-                <Card className="p-6 outline-none border-none shadow-none bg-neutral-200 flex flex-col items-start justify-start gap-6 hover:shadow-xl hover:scale-110 hover:z-10 transition-all duration-300 ease-in-out">
+                <Card className="p-6 outline-none border-none shadow-none bg-neutral-200 flex flex-col items-start justify-start gap-6 lg:hover:shadow-xl lg:hover:scale-110 lg:hover:z-10 transition-all duration-300 ease-in-out">
                     <p className="text-4xl font-semibold text-neutral-700">
                         01
                     </p>
-
                     <div className="w-full space-y-4">
                         <h2 className="text-xl font-semibold text-neutral-700">
                             Architect
@@ -97,11 +99,10 @@ const Services = () => {
                 </Card>
 
                 {/* second card */}
-                <Card className="p-6 outline-none border-none shadow-none bg-neutral-200 flex flex-col items-start justify-start gap-6 hover:shadow-xl hover:scale-110 hover:z-10 transition-all duration-300 ease-in-out">
+                <Card className="p-6 outline-none border-none shadow-none bg-neutral-200 flex flex-col items-start justify-start gap-6 lg:hover:shadow-xl lg:hover:scale-110 lg:hover:z-10 transition-all duration-300 ease-in-out">
                     <p className="text-4xl font-semibold text-neutral-700">
                         02
                     </p>
-
                     <div className="w-full space-y-4">
                         <h2 className="text-xl font-semibold text-neutral-700">
                             Engineer
@@ -116,12 +117,12 @@ const Services = () => {
                         </p>
                     </div>
                 </Card>
+
                 {/* third card */}
-                <Card className="p-6 outline-none border-none shadow-none bg-neutral-200 flex flex-col items-start justify-start gap-6 hover:shadow-xl hover:scale-110 hover:z-10 transition-all duration-300 ease-in-out">
+                <Card className="p-6 outline-none border-none shadow-none bg-neutral-200 flex flex-col items-start justify-start gap-6 md:col-span-2 lg:col-span-1 lg:hover:shadow-xl lg:hover:scale-110 lg:hover:z-10 transition-all duration-300 ease-in-out">
                     <p className="text-4xl font-semibold text-neutral-700">
                         03
                     </p>
-
                     <div className="w-full space-y-4">
                         <h2 className="text-xl font-semibold text-neutral-700">
                             Automate & Scale
