@@ -1,5 +1,5 @@
-import Header from "@/components/Header";
 import About from "@/containers/About";
+import Header from "@/containers/Header";
 import Home from "@/containers/Home";
 import Projects from "@/containers/Projects";
 import Services from "@/containers/Services";
