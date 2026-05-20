@@ -1,5 +1,5 @@
-export { default as AboutImg } from "@/assets/Adobe Express - file 3.png";
-export { default as HeroBg } from "@/assets/Adobe Express - file.png";
+export { default as AboutImg } from "@/assets/Adobe Express - file 3.webp";
+export { default as HeroBg } from "@/assets/Adobe Express - file.webp";
 
 // Projects
 export { default as BlogApp } from "@/assets/projects/aspdevs__home_-_Comet - 12;59;38AM - 18 May 2026.png";

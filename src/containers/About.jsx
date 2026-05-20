@@ -61,7 +61,10 @@ const About = () => {
                     <div className="aspect-square rounded-lg shadow hover:shadow-lg bg-black  flex items-center justify-end md:-rotate-3 md:hover:rotate-0 transition-all duration-150 ease-in-out overflow-hidden">
                         <img
                             src={AboutImg}
-                            className="w-full h-full object-contain"
+                            onLoad={(e) =>
+                                e.target.classList.add("opacity-100")
+                            }
+                            className="w-full h-full object-contain opacity-0 transition-opacity duration-300"
                             alt="Kamohelo"
                         />
                     </div>

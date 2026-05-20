@@ -15,7 +15,8 @@ const Home = () => {
                 <img
                     alt="Kamohelo"
                     src={HeroBg}
-                    className="w-[320px] sm:w-[380px] md:w-[420px] lg:w-[780px] grayscale contrast-125 brightness-110 object-contain object-bottom image-mask"
+                    onLoad={(e) => e.target.classList.add("opacity-100")}
+                    className="w-[320px] sm:w-[380px] md:w-[420px] lg:w-[780px] opacity-0 transition-opacity duration-300 grayscale contrast-125 brightness-110 object-contain object-bottom image-mask"
                 />
             </div>
 
