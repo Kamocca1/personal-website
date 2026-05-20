@@ -1,10 +1,34 @@
 import { HeroBg } from "@/assets";
+import { useEffect, useState } from "react";
 
 const Home = () => {
+    // Default to 100vh for server-side rendering/initial paint
+    const [heroHeight, setHeroHeight] = useState("100vh");
+
+    useEffect(() => {
+        const lockHeight = () => {
+            // Grab the exact pixel height of the screen upon load (with the URL bar visible)
+            // and locks it. e.g., "750px" instead of a CSS percentage.
+            setHeroHeight(`${window.innerHeight}px`);
+        };
+
+        lockHeight();
+
+        // Only recalculate if the user physically turns their phone sideways
+        window.addEventListener("orientationchange", () => {
+            setTimeout(lockHeight, 200); // slight delay for the browser UI to catch up
+        });
+
+        return () => {
+            window.removeEventListener("orientationchange", lockHeight);
+        };
+    }, []);
+
     return (
         <section
             id="home"
-            className="w-full h-svh md:min-h-svh pt-24 relative outer-gradient overflow-hidden"
+            style={{ height: heroHeight }}
+            className="w-full pt-24 relative outer-gradient overflow-hidden"
         >
             <div className="radial-bg"></div>
             <div className="bottom-left-gradient"></div>
@@ -16,7 +40,7 @@ const Home = () => {
                     alt="Kamohelo"
                     src={HeroBg}
                     onLoad={(e) => e.target.classList.add("opacity-100")}
-                    className="w-[320px] sm:w-[380px] md:w-[420px] lg:w-[780px] opacity-0 transition-opacity duration-300 grayscale contrast-125 brightness-110 object-contain object-bottom image-mask"
+                    className="w-[320px] sm:w-95 md:w-105 lg:w-195 opacity-0 transition-opacity duration-300 grayscale contrast-125 brightness-110 object-contain object-bottom image-mask"
                 />
             </div>
 
@@ -46,10 +70,10 @@ const Home = () => {
                 </div>
 
                 <div className="w-full flex items-center justify-between px-4 md:px-12 z-30">
-                    <h1 className="text-4xl md:text-6xl lg:text-8xl text-left font-bold font-sans tracking-widest uppercase text-slate-800 [text-shadow:_0_1px_0_rgb(255_255_255_/_30%)] drop-shadow-[0_2px_10px_rgba(255,255,255,0.8)]">
+                    <h1 className="text-4xl md:text-6xl lg:text-8xl text-left font-bold font-sans tracking-widest uppercase text-slate-800 [text-shadow:0_1px_0_rgb(255_255_255/30%)] drop-shadow-[0_2px_10px_rgba(255,255,255,0.8)]">
                         I am <br /> Kamohelo
                     </h1>
-                    <h2 className="text-xl md:text-4xl text-left font-bold tracking-wider uppercase text-slate-800 [text-shadow:_0_1px_0_rgb(255_255_255_/_30%)] drop-shadow-[0_2px_10px_rgba(255,255,255,0.8)] ">
+                    <h2 className="text-xl md:text-4xl text-left font-bold tracking-wider uppercase text-slate-800 [text-shadow:0_1px_0_rgb(255_255_255/30%)] drop-shadow-[0_2px_10px_rgba(255,255,255,0.8)] ">
                         Full <br /> Stack <br /> Software <br /> Engineer
                     </h2>
                 </div>
