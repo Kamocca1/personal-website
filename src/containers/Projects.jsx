@@ -5,7 +5,7 @@ const Projects = () => {
     return (
         <section
             id="projects"
-            className="w-full h-auto md:min-h-screen pt-24 container mx-auto px-6 relative space-y-12"
+            className="w-full h-auto md:min-h-svh pt-24 container mx-auto px-6 relative space-y-12"
         >
             <h2 className="text-xl md:text-2xl text-center font-bold text-neutral-800 uppercase">
                 Recent Projects

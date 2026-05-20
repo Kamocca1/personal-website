@@ -6,7 +6,7 @@ import Services from "@/containers/Services";
 
 const App = () => {
     return (
-        <div className="w-full min-h-screen overflow-x-hidden flex-1">
+        <div className="w-full md:min-h-svh overflow-x-hidden flex-1">
             {/* header*/}
             <Header />
 

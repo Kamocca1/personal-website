@@ -4,7 +4,7 @@ const Home = () => {
     return (
         <section
             id="home"
-            className="w-full h-[100dvh] md:min-h-screen pt-24 relative outer-gradient overflow-hidden"
+            className="w-full h-svh md:min-h-svh pt-24 relative outer-gradient overflow-hidden"
         >
             <div className="radial-bg"></div>
             <div className="bottom-left-gradient"></div>
