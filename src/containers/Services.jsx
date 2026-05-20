@@ -75,7 +75,7 @@ const Services = () => {
             </div>
 
             <h2 className="mt-8 text-xl md:text-3xl text-center font-serif italic text-neutral-800">
-                here&apos;s how it works
+                here&apos;s how I can help
             </h2>
 
             <div className="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 py-12 md:px-12">
