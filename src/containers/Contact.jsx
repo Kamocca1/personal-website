@@ -8,7 +8,7 @@ const Contact = () => {
             <h2 className="text-center text-neutral-500 font-normal font-serif tracking-widest text-2xl md:text-3xl lg:text-4xl w-full">
                 Let&apos;s build real value <br />{" "}
                 <span className="pt-12 text-neutral-800 font-semibold">
-                    Contact me below.
+                    Contact me below
                 </span>
             </h2>
 
