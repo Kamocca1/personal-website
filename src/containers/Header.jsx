@@ -3,6 +3,15 @@ import { cn } from "@/lib/utils";
 import { NavMenus } from "@/utils/helper";
 import { useEffect, useState } from "react";
 
+import {
+    Sheet,
+    SheetContent,
+    SheetHeader,
+    SheetTitle,
+    SheetTrigger,
+} from "@/components/ui/sheet";
+import { Menu } from "lucide-react";
+
 const Header = () => {
     const [activeSection, setActiveSection] = useState("home");
     const [isScrolled, setIsScrolled] = useState(false);
@@ -143,6 +152,45 @@ const Header = () => {
                             Contact
                         </Button>
                     </a>
+
+                    <Sheet>
+                        <SheetTrigger className="block md:hidden">
+                            <Menu />
+                        </SheetTrigger>
+                        <SheetContent>
+                            <SheetHeader>
+                                <SheetTitle />
+                            </SheetHeader>
+
+                            <nav>
+                                <ul className="flex items-start flex-col justify-start gap-12">
+                                    {NavMenus.map((menu) => {
+                                        const isActive =
+                                            activeSection === menu.key;
+
+                                        return (
+                                            <li key={menu.key}>
+                                                <a
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        handleNavClick(menu);
+                                                    }}
+                                                    className={cn(
+                                                        "text-neutral-600 hover:text-neutral-800 hover:font-semibold transition-all ease-in-out duration-75 p-2.5",
+                                                        isActive &&
+                                                            "text-neutral-800 font-semibold",
+                                                    )}
+                                                    href={menu.url}
+                                                >
+                                                    {menu.label}
+                                                </a>
+                                            </li>
+                                        );
+                                    })}
+                                </ul>
+                            </nav>
+                        </SheetContent>
+                    </Sheet>
                 </div>
             </div>
         </header>

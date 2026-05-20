@@ -1,4 +1,6 @@
 import About from "@/containers/About";
+import Contact from "@/containers/Contact";
+import Footer from "@/containers/Footer";
 import Header from "@/containers/Header";
 import Home from "@/containers/Home";
 import Projects from "@/containers/Projects";
@@ -25,8 +27,10 @@ const App = () => {
             {/* testimonials */}
 
             {/* contact */}
+            <Contact />
 
             {/* footer */}
+            <Footer />
         </div>
     );
 };

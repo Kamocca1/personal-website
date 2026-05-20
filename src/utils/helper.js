@@ -21,11 +21,11 @@ export const NavMenus = [
         url: "/?section=services",
         key: "services",
     },
-    {
-        label: "Testimonials",
-        url: "/?section=testimonials",
-        key: "testimonials",
-    },
+    // {
+    //     label: "Testimonials",
+    //     url: "/?section=testimonials",
+    //     key: "testimonials",
+    // },
 ];
 
 export const ProjectData = [
