@@ -38,9 +38,13 @@ const Header = () => {
                     const currentId = entry.target.id;
                     setActiveSection(currentId);
 
-                    const url = new URL(window.location);
-                    url.searchParams.set("section", currentId);
-                    window.history.replaceState({}, "", url);
+                    // ONLY modify the browser history URL string on desktop screens
+                    // This stops mobile browsers from crashing their scroll threads
+                    if (window.innerWidth >= 768) {
+                        const url = new URL(window.location);
+                        url.searchParams.set("section", currentId);
+                        window.history.replaceState({}, "", url);
+                    }
                 }
             });
         }, observerOptions);
@@ -77,8 +81,8 @@ const Header = () => {
     return (
         <header
             className={cn(
-                "w-full fixed top-0 left-0 z-50 flex items-center justify-between transition-all duration-300",
-                isScrolled ? "p-2 md:p-4" : "p-4 md:p-8",
+                "w-full fixed top-0 left-0 z-50 flex items-center justify-between transition-all duration-300 p-4 md:p-8",
+                isScrolled && "md:p-4", // Only scales padding down on desktop (md and up)
             )}
         >
             {/* LAYOUT CONTAINER: Never changes size or border/shadow */}
